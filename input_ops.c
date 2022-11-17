@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:05:30 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 00:43:46 by znichola         ###   ########.fr       */
+/*   Updated: 2022/11/17 09:00:13 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static char	*ft_strnstr(const char *big, const char *little, size_t len)
 	char	*l;
 	size_t	i;
 
+	// printf("\nlen:%lu big<%s> little<%s>\n", len, big, little);
 	if (*little == '\0')
 		return ((char *)big);
 	while (*big != '\0' && len > 0)
@@ -36,29 +37,29 @@ static char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 static int find_opp(char *str, size_t len)
 {
-	if (!ft_strnstr(str, "SA", len))
+	if (len == 2 && ft_strnstr(str, "SA", 2))
 		return (SA);
-	if (!ft_strnstr(str, "SB", len))
+	if (len == 2 && ft_strnstr(str, "SB", 2))
 		return (SB);
-	if (!ft_strnstr(str, "SS", len))
+	if (len == 2 && ft_strnstr(str, "SS", 2))
 		return (SS);
-	if (!ft_strnstr(str, "PA", len))
+	if (len == 2 && ft_strnstr(str, "PA", 2))
 		return (PA);
-	if (!ft_strnstr(str, "PB", len))
+	if (len == 2 && ft_strnstr(str, "PB", 2))
 		return (PB);
-	if (!ft_strnstr(str, "RA", len))
+	if (len == 2 && ft_strnstr(str, "RA", 2))
 		return (RA);
-	if (!ft_strnstr(str, "RB", len))
+	if (len == 2 && ft_strnstr(str, "RB", 2))
 		return (RB);
-	if (!ft_strnstr(str, "RR", len))
+	if (len == 2 && ft_strnstr(str, "RR", 2))
 		return (RR);
-	if (!ft_strnstr(str, "RRA", len))
+	if (len == 3 && ft_strnstr(str, "RRA", 3))
 		return (RRA);
-	if (!ft_strnstr(str, "RRB", len))
+	if (len == 3 && ft_strnstr(str, "RRB", 3))
 		return (RRB);
-	if (!ft_strnstr(str, "RRR", len))
+	if (len == 3 && ft_strnstr(str, "RRR", 3))
 		return (RRR);
-	return (FAILURE);
+	return (ERROR);
 }
 
 static int addopp(t_stack *s, char **str)
@@ -72,17 +73,17 @@ static int addopp(t_stack *s, char **str)
 	end = (char *)*str;
 	while (!ft_isspace(*end) && *end != '\0')
 		end++;
-	len = end - *str + 1;
-	printf("here len:%ld\n", len);
+	len = end - *str;
+	printf("s:<%c> e:<%c> len:%ld\n", **str, *end, len);
 	if (len > 1)
 	{
 		opp = find_opp(*str, len);
-		if (opp == FAILURE)
+		if (opp == ERROR)
 			return (message_ret(FAILURE, 2, "find op error"));
 		*s->ops = opp;
 		s->ops++;
 	}
-	*str = end + 1;
+	*str = end;
 	return (SUCCESS);
 }
 
@@ -103,7 +104,7 @@ int	process_input_ops(t_stack *s, char *str)
 			return (message_ret(0, 2, "add ops error")
 				+ ft_freeret_1(FAILURE, s->ops_root));
 	printf("process ops len:%d\n", len);
-	for (int i = 0; i < len; i++)
-		printf("%d\n", s->ops_root[i]);
+	for (int j = 0; j < len; j++)
+		printf("%d\n", s->ops_root[j]);
 	return (SUCCESS);
 }

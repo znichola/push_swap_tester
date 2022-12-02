@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:54:15 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 00:18:38 by znichola         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:50:22 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	main(int argc, char ** argv)
 {
 	t_stack	stack;
 	
+	ft_strlen("sdfds");
+	ft_printf("my printf test\n");
+
 	if (argc != 3)
 		return (message_ret(1, 1, "ags error"));
 	if (process_input_nums(&stack, argv[2]))

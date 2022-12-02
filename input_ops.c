@@ -6,13 +6,13 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:05:30 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 09:00:13 by znichola         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:58:04 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static char	*ft_strnstr(const char *big, const char *little, size_t len)
+static char	*ft_ps_strnstr(const char *big, const char *little, size_t len)
 {
 	char	*b;
 	char	*l;
@@ -37,27 +37,27 @@ static char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 static int find_opp(char *str, size_t len)
 {
-	if (len == 2 && ft_strnstr(str, "SA", 2))
+	if (len == 2 && ft_ps_strnstr(str, "SA", 2))
 		return (SA);
-	if (len == 2 && ft_strnstr(str, "SB", 2))
+	if (len == 2 && ft_ps_strnstr(str, "SB", 2))
 		return (SB);
-	if (len == 2 && ft_strnstr(str, "SS", 2))
+	if (len == 2 && ft_ps_strnstr(str, "SS", 2))
 		return (SS);
-	if (len == 2 && ft_strnstr(str, "PA", 2))
+	if (len == 2 && ft_ps_strnstr(str, "PA", 2))
 		return (PA);
-	if (len == 2 && ft_strnstr(str, "PB", 2))
+	if (len == 2 && ft_ps_strnstr(str, "PB", 2))
 		return (PB);
-	if (len == 2 && ft_strnstr(str, "RA", 2))
+	if (len == 2 && ft_ps_strnstr(str, "RA", 2))
 		return (RA);
-	if (len == 2 && ft_strnstr(str, "RB", 2))
+	if (len == 2 && ft_ps_strnstr(str, "RB", 2))
 		return (RB);
-	if (len == 2 && ft_strnstr(str, "RR", 2))
+	if (len == 2 && ft_ps_strnstr(str, "RR", 2))
 		return (RR);
-	if (len == 3 && ft_strnstr(str, "RRA", 3))
+	if (len == 3 && ft_ps_strnstr(str, "RRA", 3))
 		return (RRA);
-	if (len == 3 && ft_strnstr(str, "RRB", 3))
+	if (len == 3 && ft_ps_strnstr(str, "RRB", 3))
 		return (RRB);
-	if (len == 3 && ft_strnstr(str, "RRR", 3))
+	if (len == 3 && ft_ps_strnstr(str, "RRR", 3))
 		return (RRR);
 	return (ERROR);
 }

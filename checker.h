@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:32:41 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 00:04:57 by znichola         ###   ########.fr       */
+/*   Updated: 2022/11/17 16:43:48 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# include "libft/libft.h"
 
 # define SUCCESS 0
 # define FAILURE 1

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_ops.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:05:30 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 16:58:04 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/02 15:02:28 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int addopp(t_stack *s, char **str)
 	while (!ft_isspace(*end) && *end != '\0')
 		end++;
 	len = end - *str;
-	printf("s:<%c> e:<%c> len:%ld\n", **str, *end, len);
+	// printf("s:<%c> e:<%c> len:%ld\n", **str, *end, len);
 	if (len > 1)
 	{
 		opp = find_opp(*str, len);
@@ -103,8 +103,7 @@ int	process_input_ops(t_stack *s, char *str)
 		if (addopp(s, &str) == FAILURE)
 			return (message_ret(0, 2, "add ops error")
 				+ ft_freeret_1(FAILURE, s->ops_root));
-	printf("process ops len:%d\n", len);
-	for (int j = 0; j < len; j++)
-		printf("%d\n", s->ops_root[j]);
+	display_ops(s);
+	// ft_printf("number of ops is:%d\npointer len:%u\n", len, s->ops - s->ops_root);
 	return (SUCCESS);
 }

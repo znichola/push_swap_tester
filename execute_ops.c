@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute_ops.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:23:19 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 00:31:00 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:56:47 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ int	print_stack(t_stack *s)
 	int	i;
 
 	i = s->size;
-	printf("a  b\n");
+	ft_printf("a  b\n");
 	while (i--)
 	{
 		if (s->root_a + i <= s->a)
-			printf("%-2d", s->root_a[i]);
-		printf(" ");
+			ft_printf("%-2d", s->root_a[i]);
+		ft_printf(" ");
 		if (s->root_b + i <= s->b)
-			printf("%-2d", s->root_b[i]);
-		printf("\n");
+			ft_printf("%-2d", s->root_b[i]);
+		ft_printf("\n");
 	}
 	return (SUCCESS);
 }

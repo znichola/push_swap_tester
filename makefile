@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: znichola <znichola@student.42.fr>          +#+  +:+       +#+         #
+#    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 21:29:13 by znichola          #+#    #+#              #
-#    Updated: 2022/11/17 17:11:25 by znichola         ###   ########.fr        #
+#    Updated: 2022/12/02 13:48:56 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	checker
 
-FILES	=	execute_ops  input_ops    stack_ops__0 stack_ops__2 utils2 \
-			input_num    mian         stack_ops__1 utils
+FILES	=	execute_ops  input_ops    stack_ops__0 stack_ops__2 utils2  utils3 \
+			input_num    main         stack_ops__1 utils
 SRC		=	$(addsuffix .c, $(FILES))
 OBJ		= 	$(SRC:.c=.o)
 

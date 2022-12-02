@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:32:41 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/17 16:43:48 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/02 01:58:21 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,10 @@ int		message_ret(int sig, int fd, char *msg);
 int		ft_freeret_1(int ret, void *x);
 int		ft_freeret_2(int ret, void *x, void *y);
 int		ft_freeret_3(int ret, void *x, void *y, void *z);
+int		write_ops(int i);
+
+// utils 3
+int		display_ops(t_stack *s);
 
 // stack ops _0
 int	sh(t_stack *s, char x);

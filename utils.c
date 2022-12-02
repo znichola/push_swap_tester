@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:45:59 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/16 22:04:25 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/02 02:13:31 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	ft_count_args(char const *s)
 	}
 	return (count);
 }
-
 
 int	ft_atoi_read(int *n, char **str)
 {

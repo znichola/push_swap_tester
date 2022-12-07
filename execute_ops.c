@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 23:23:19 by znichola          #+#    #+#             */
-/*   Updated: 2022/12/02 11:56:47 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:54:32 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,21 @@ static int	do_op(t_stack *s, int op)
 	if (op == RRR)
 		return (rrr_(s));
 	return (ERROR);
+	print_stack(s);
 }
 
 int	print_stack(t_stack *s)
 {
 	int	i;
 
-	i = s->size;
+	i = -1;
 	ft_printf("a  b\n");
-	while (i--)
+	while (i++ < s->size)
 	{
 		if (s->root_a + i <= s->a)
 			ft_printf("%-2d", s->root_a[i]);
+		else
+			ft_printf("  ");
 		ft_printf(" ");
 		if (s->root_b + i <= s->b)
 			ft_printf("%-2d", s->root_b[i]);
@@ -61,13 +64,24 @@ int	execute_ops(t_stack *s)
 {
 	int	i;
 
-	while (s->ops_root <= s->ops)
-		if (do_op(s, *s->ops_root++))
-			return (message_ret(ERROR, 2, "ops exe error"));
 	i = 0;
-	while (s->solution[i] == s->root_a[i] && i < s->size)
+	while (s->ops_root + i < s->ops)
+	{	
+		ft_printf("doing: ");
+		write_ops(i);
+		if (do_op(s, s->ops_root[i++]))
+			return (message_ret(ERROR, 2, "ops exe error"));
+		print_stack(s);
+	}
+	i = 0;
+	while (s->solution[i] == s->root_a[i] && i < s->size && s->root_a + i <= s->a)
 		i++;
-	print_stack(s);
+	if (DEBUG_TEST)
+	{
+		ft_printf("final stack state:\n");
+		print_stack(s);
+		ft_printf("evaluation: ");
+	}
 	if (i == s->size)
 		return (SUCCESS);
 	return (FAILURE);

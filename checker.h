@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:32:41 by znichola          #+#    #+#             */
-/*   Updated: 2022/12/02 01:58:21 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:16:33 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# define DEBUG 
 
 # include "libft/libft.h"
 

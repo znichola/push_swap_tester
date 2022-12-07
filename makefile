@@ -6,7 +6,7 @@
 #    By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/16 21:29:13 by znichola          #+#    #+#              #
-#    Updated: 2022/12/02 13:48:56 by znichola         ###   ########.fr        #
+#    Updated: 2022/12/05 09:15:33 by znichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ LIB_N	=	libft.a
 LIB		=	$(LIB_DIR)/$(LIB_N)
 
 .c.o :
-		$(CC) $(CFLAGS) $(INC_PAR) -c $< -o $(@)
+		$(CC) $(CFLAGS) -c $< -o $(@)
 
 all : $(NAME)
 
@@ -68,6 +68,6 @@ $(LIB):
 		$(MAKE) -C $(LIB_DIR) $(LIB_N)
 		cp $(LIB) $(NAME)
 
-.PHONY : $(NAME) all re clean fclean bonus
+.PHONY : all re clean fclean bonus
 
 # .SILENT:

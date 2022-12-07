@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 21:55:47 by znichola          #+#    #+#             */
-/*   Updated: 2022/12/02 01:53:44 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/05 11:12:25 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 int	message_ret(int sig, int fd, char *msg)
 {
-	while (*msg)
-		write(fd, msg++, 1);
+	ft_putstr_fd(msg, fd);
 	write(fd, &"\n", 1);
 	return (sig);
 }

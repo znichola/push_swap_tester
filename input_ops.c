@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:05:30 by znichola          #+#    #+#             */
-/*   Updated: 2022/12/02 15:02:28 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:18:32 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,10 @@ int	process_input_ops(t_stack *s, char *str)
 		if (addopp(s, &str) == FAILURE)
 			return (message_ret(0, 2, "add ops error")
 				+ ft_freeret_1(FAILURE, s->ops_root));
-	display_ops(s);
-	// ft_printf("number of ops is:%d\npointer len:%u\n", len, s->ops - s->ops_root);
+	if (DEBUG_TEST)
+	{
+		ft_printf("\nrecorded ops:\n");
+		display_ops(s);
+	}
 	return (SUCCESS);
 }

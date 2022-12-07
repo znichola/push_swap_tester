@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 01:54:02 by znichola          #+#    #+#             */
-/*   Updated: 2022/12/02 15:02:15 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:08:29 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	display_ops(t_stack *s)
 	i = -1;
 	while(++i < s->ops - s->ops_root)
 	{
-		if (write_ops(i))
+		if (write_ops(s->ops_root[i]))
 			ft_printf("overflow ops");
 	}
 	return (0);

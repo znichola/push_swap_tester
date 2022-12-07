@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_ops__0.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: znichola <znichola@student.42.fr>          +#+  +:+       +#+        */
+/*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 19:57:05 by znichola          #+#    #+#             */
-/*   Updated: 2022/11/16 23:52:04 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:07:39 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 /** only stack opperation */
 
+// stack hight
 int	sh(t_stack *s, char x)
 {
 	if (x == 'a')
-		return(s->a - s->root_a + 1);
+		return (s->a - s->root_a + 1);
 	if (x == 'b')
-		return(s->b - s->root_b + 1);
+		return (s->b - s->root_b + 1);
+	if (x == 'o')
+		return (s->ops - s->ops_root + 1);
 	return(ERROR);
 }
 

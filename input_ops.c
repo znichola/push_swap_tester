@@ -6,7 +6,7 @@
 /*   By: znichola <znichola@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 22:05:30 by znichola          #+#    #+#             */
-/*   Updated: 2022/12/06 11:18:32 by znichola         ###   ########.fr       */
+/*   Updated: 2022/12/09 00:53:18 by znichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,27 @@ static char	*ft_ps_strnstr(const char *big, const char *little, size_t len)
 
 static int find_opp(char *str, size_t len)
 {
-	if (len == 2 && ft_ps_strnstr(str, "SA", 2))
+	if (len == 2 && ft_ps_strnstr(str, "sa", 2))
 		return (SA);
-	if (len == 2 && ft_ps_strnstr(str, "SB", 2))
+	if (len == 2 && ft_ps_strnstr(str, "sb", 2))
 		return (SB);
-	if (len == 2 && ft_ps_strnstr(str, "SS", 2))
+	if (len == 2 && ft_ps_strnstr(str, "ss", 2))
 		return (SS);
-	if (len == 2 && ft_ps_strnstr(str, "PA", 2))
+	if (len == 2 && ft_ps_strnstr(str, "pa", 2))
 		return (PA);
-	if (len == 2 && ft_ps_strnstr(str, "PB", 2))
+	if (len == 2 && ft_ps_strnstr(str, "pb", 2))
 		return (PB);
-	if (len == 2 && ft_ps_strnstr(str, "RA", 2))
+	if (len == 2 && ft_ps_strnstr(str, "ra", 2))
 		return (RA);
-	if (len == 2 && ft_ps_strnstr(str, "RB", 2))
+	if (len == 2 && ft_ps_strnstr(str, "rb", 2))
 		return (RB);
-	if (len == 2 && ft_ps_strnstr(str, "RR", 2))
+	if (len == 2 && ft_ps_strnstr(str, "rr", 2))
 		return (RR);
-	if (len == 3 && ft_ps_strnstr(str, "RRA", 3))
+	if (len == 3 && ft_ps_strnstr(str, "rra", 3))
 		return (RRA);
-	if (len == 3 && ft_ps_strnstr(str, "RRB", 3))
+	if (len == 3 && ft_ps_strnstr(str, "rrb", 3))
 		return (RRB);
-	if (len == 3 && ft_ps_strnstr(str, "RRR", 3))
+	if (len == 3 && ft_ps_strnstr(str, "rrr", 3))
 		return (RRR);
 	return (ERROR);
 }
